@@ -6,9 +6,14 @@ let package = Package(
     products: [
         .library(
             name: "AppsFlyerLib",
-            targets: ["AppsFlyerLib"])
+            targets: ["AppsFlyerLib", "AppsFlyerLibResources"])
     ],
     targets: [
+        .target(
+            name: "AppsFlyerLibResources",
+            path: "./",
+            resources: [.process("PrivacyInfo.xcprivacy")]
+        ),
         .binaryTarget(
             name: "AppsFlyerLib",
             url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework/releases/download/6.13.2/AppsFlyerLib.xcframework.zip",
